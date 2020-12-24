@@ -2,10 +2,11 @@ from bs4 import BeautifulSoup as bs
 import requests
 from splinter import Browser
 import pandas as pd
+from webdriver_manager.chrome import ChromeDriverManager
 
 def init_browser():
     # Setting up windows browser with chromedriver
-    executable_path = {'executable_path': 'chromedriver.exe'}
+    executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
     return browser
 
@@ -81,7 +82,7 @@ def scrape():
     mars_df = mars_facts[0]
 
     # Assign the columns ['Description', 'Value']
-    mars_df.columns = ['Description', 'Value']
+    mars_df.columns = ['Description', 'Mars']
 
     # Set the index to the Description
     mars_df.set_index('Description', inplace=True)
@@ -130,7 +131,7 @@ def scrape():
         img_url = main_url + soup.find('img', class_='wide-image')['src']
 
         # Append the retrieved information into a list of dictionaries
-        image_urls.append({"title" : title, "img_url" : img_url})
+        image_urls.append({"title" : title, "image_url" : img_url})
 
     # Add the image_urls list to the mars_data dictionary
     mars_data['hemi_image_urls'] = image_urls

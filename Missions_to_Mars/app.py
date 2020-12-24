@@ -12,7 +12,7 @@ def index():
     # Find mars_data
     mars_data = mongo.db.mars.find_one()
     # print(mars_data)
-    return render_template("index.html", data=mars_data)
+    return render_template("index.html", mars_data=mars_data)
 
 @app.route("/scrape")
 def scrape():

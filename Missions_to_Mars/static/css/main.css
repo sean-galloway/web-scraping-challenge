@@ -12,6 +12,10 @@ h6 {
     color: firebrick;
 }
 
+.dataframe {
+    text-align: left !important;
+}
+
 .featured_img {
     max-width:100%;
     max-height: auto;

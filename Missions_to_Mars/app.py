@@ -9,9 +9,9 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    # Find a mars_data to update
+    # Find mars_data
     mars_data = mongo.db.mars.find_one()
-    # print(mars)
+    # print(mars_data)
     return render_template("index.html", data=mars_data)
 
 @app.route("/scrape")

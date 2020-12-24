@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mars Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--CSS Link-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+
+<body class="text-white" style="background-color:black;">
+    <div class="container">
+
+        <!-- Jumbotron -->
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Mission to Mars</h1>
+            <a class="btn btn-lg text-white" href="/scrape" role="button">Scrape New Data</a>
+        </div>
+
+        <!-- News Section -->
+        <div class="container">
+            <h3>Latest Mars News</h3>
+            <h6>NASA to Broadcast Mars 2020 Perseverance Launch, Prelaunch Activities</h6>
+            <p>Starting July 27, news activities will cover everything from mission engineering and science to returning samples from Mars to, of course, the launch itself.</p>
+        </div>
+
+        <!-- Featured Image and Mars Facts-->
+        <div class="container">
+            <div class="row">
+
+                <!-- Featured Image -->
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <h3>Featured Mars Image</h3>
+                    <img class="featured_img" src="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA23170-1920x1200.jpg" alt="Mars Featured Image">
+                </div>
+
+                <!-- Mars Facts-->
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h3>Mars Facts</h3>
+                    <table border="1" class="dataframe">
+                        <thead>
+                          <tr style="text-align: left;">
+                            <th></th>
+                            <th>Value</th>
+                          </tr>
+                          <tr>
+                            <th>Description</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th>Equatorial Diameter:</th>
+                            <td>6,792 km</td>
+                          </tr>
+                          <tr>
+                            <th>Polar Diameter:</th>
+                            <td>6,752 km</td>
+                          </tr>
+                          <tr>
+                            <th>Mass:</th>
+                            <td>6.39 × 10^23 kg (0.11 Earths)</td>
+                          </tr>
+                          <tr>
+                            <th>Moons:</th>
+                            <td>2 (Phobos &amp; Deimos)</td>
+                          </tr>
+                          <tr>
+                            <th>Orbit Distance:</th>
+                            <td>227,943,824 km (1.38 AU)</td>
+                          </tr>
+                          <tr>
+                            <th>Orbit Period:</th>
+                            <td>687 days (1.9 years)</td>
+                          </tr>
+                          <tr>
+                            <th>Surface Temperature:</th>
+                            <td>-87 to -5 °C</td>
+                          </tr>
+                          <tr>
+                            <th>First Record:</th>
+                            <td>2nd millennium BC</td>
+                          </tr>
+                          <tr>
+                            <th>Recorded By:</th>
+                            <td>Egyptian astronomers</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container for featured image and mars facts -->
+
+        <!-- Mars Hemispheres -->
+        <h3 class="h3_hemispheres">Mars Hemispheres</h3>
+        <hr color="white">
+        <div class="card-deck">
+            <div class="col-md-12">
+                <div class="row">
+                    <!-- {% for item in mars_info.hemi_image_urls %} -->
+                    <div class="col-md-6">
+                        <div class="card text-white bg-dark">
+                            <img class="card-img-top" src="https://astrogeology.usgs.gov/cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg" />
+                            <div class="card-body">
+                                <p class="card-text">Cerberus Hemisphere Enhanced</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card text-white bg-dark">
+                            <img class="card-img-top" src="https://astrogeology.usgs.gov/cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg" />
+                            <div class="card-body">
+                                <p class="card-text">Cerberus Hemisphere Enhanced</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card text-white bg-dark">
+                            <img class="card-img-top" src="https://astrogeology.usgs.gov/cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg" />
+                            <div class="card-body">
+                                <p class="card-text">Cerberus Hemisphere Enhanced</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card text-white bg-dark">
+                            <img class="card-img-top" src="https://astrogeology.usgs.gov/cache/images/f5e372a36edfa389625da6d0cc25d905_cerberus_enhanced.tif_full.jpg" />
+                            <div class="card-body">
+                                <p class="card-text">Cerberus Hemisphere Enhanced</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- {% endfor %} -->
+                </div>
+            </div>
+
+    </div> <!-- Container -->
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+
+</body>
+</html>

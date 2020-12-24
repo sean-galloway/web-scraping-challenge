@@ -81,7 +81,7 @@ def scrape():
     # Find the mars facts DataFrame in the list of DataFrames as assign it to mars_df
     mars_df = mars_facts[0]
 
-    # Assign the columns ['Description', 'Value']
+    # Assign the columns ['Description', 'Mars']
     mars_df.columns = ['Description', 'Mars']
 
     # Set the index to the Description
@@ -135,6 +135,8 @@ def scrape():
 
     # Add the image_urls list to the mars_data dictionary
     mars_data['hemi_image_urls'] = image_urls
+
+    browser.quit()
 
     return mars_data
 

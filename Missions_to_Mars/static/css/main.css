@@ -12,8 +12,12 @@ h6 {
     color: firebrick;
 }
 
-.dataframe {
+table.dataframe {
     text-align: left !important;
+}
+
+table.dataframe tr:nth-child(even) {
+    background-color: slategray;
 }
 
 .featured_img {

@@ -1,3 +1,7 @@
+body {
+    background-color: black !important;
+}
+
 .jumbotron {
     background-size: 100%;
     height: 100%;
@@ -5,7 +9,7 @@
 }
 
 .btn {
-    background-color: firebrick;
+    background-color: firebrick !important;
 }
 
 h6 {

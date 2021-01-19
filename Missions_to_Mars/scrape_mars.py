@@ -53,20 +53,20 @@ def scrape():
     url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
     browser.visit(url)
 
-    # HTML Text
-    html = browser.html
+    # Grab the cards for the images
+    cards = browser.find_by_css('.BaseImage')
 
-    # Parse HTML with Beautiful Soup
-    soup = bs(html, 'html.parser')
+    # Card 0 is the featured image, click thru
+    cards[0].click()
 
-    # Retrieve background-image url from style tag
-    featured_image_url = soup.find('article')['style'].replace('background-image: url(','').replace(');', '')[1:-1]
+    # get soup of the html
+    soup = bs(browser.html, 'html.parser')
 
-    # Website Url
-    main_url = 'https://www.jpl.nasa.gov'
+    # Find the image
+    images=soup.find_all('img', class_='BaseImage')[0]
 
-    # Concatenate website url with scrapped route
-    featured_image_url = main_url + featured_image_url
+    # Set the featured image url
+    featured_image_url = images['data-src']
 
     # Display full link to featured image
     mars_data['featured_image_url'] = featured_image_url

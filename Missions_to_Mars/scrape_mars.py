@@ -7,13 +7,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 def init_browser():
     # Setting up windows browser with chromedriver
     executable_path = {'executable_path': ChromeDriverManager().install()}
-    browser = Browser('chrome', **executable_path, headless=False)
-    return browser
+    return Browser('chrome', **executable_path, headless=False)
 
 def scrape():
     browser = init_browser()
-
-    mars_data = {}
 
     # -------------------------------------------------------------------
     # NASA Mars News
@@ -36,8 +33,6 @@ def scrape():
             if (result.a.text):
                 # Append text to the list
                 news_titles.append(result.a.text.strip())
-    mars_data['news_title'] = news_titles[0]
-
     # Find the div for description paragraph below title
     p_results = soup.find_all('div', class_="rollover_description_inner")
     # Set up a list
@@ -45,8 +40,7 @@ def scrape():
     for result in p_results:
         text = result.text.strip()
         p_list.append(text)
-    mars_data['news_paragraph'] = p_list[0]
-
+    mars_data = {'news_title': news_titles[0], 'news_paragraph': p_list[0]}
     # -------------------------------------------------------------------
     # JPL Mars Space Images - Featured Image
     # URL to scrape
